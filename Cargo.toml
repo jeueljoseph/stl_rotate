@@ -1,0 +1,10 @@
+[package]
+name = "stl_rotate"
+version = "0.1.0"
+authors = ["jeueljoseph <jeueljoseph@gmail.com>"]
+edition = "2018"
+description = "C++ stl::rotate but uses range instead of first, .., last"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
