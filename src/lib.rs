@@ -3,7 +3,7 @@ pub trait Rotate<T> {
     fn rotate<R: RangeBounds<usize>>(&mut self, range: R, new_first: usize);
 }
 
-impl<T: std::fmt::Debug> Rotate<T> for Vec<T> {
+impl<T> Rotate<T> for Vec<T> {
     fn rotate<R: RangeBounds<usize>>(&mut self, range: R, new_first: usize) {
         let first = match range.start_bound() {
             Bound::Excluded(i) => i + 1,
@@ -12,7 +12,7 @@ impl<T: std::fmt::Debug> Rotate<T> for Vec<T> {
         };
 
         let last = match range.end_bound() {
-            Bound::Excluded(i) => *i - 1,
+            Bound::Excluded(i) => i - 1,
             Bound::Included(i) => *i,
             Bound::Unbounded => self.len() - 1,
         };
